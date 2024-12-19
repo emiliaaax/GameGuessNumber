@@ -42,26 +42,26 @@ function checkGuess() {
 
     // Comprobamos si el numero introducido es igual al numero aleatorio
     if (userGuess === randomNumber) {
-        lastResult.textContent = "!Correcto!";
+        lastResult.textContent = "Correct!";
         // Si es igual, mostramos mensaje de Feliciacion
-        lastResult.textContent == "!Felicidades! !Lo has logardo!";
+        lastResult.textContent == "Congratulations! You've made it!";
         // Cambiamos los estilos de fondo de lastResult
         lastResult.style.backgroundColor = "green";
         //Quitamos el texto de lowOrHi
         lowOrHi.textContent = "";
         setGameOver();
     } else if (guessCount === 10) {  // fallanis y no quedan intentos
-        lastResult.textContent = "!Fin del juego";
+        lastResult.textContent = "Game over!";
         setGameOver();
     } else {
-        lastResult.textContent = "!Incorrecto!";
+        lastResult.textContent = "Incorrect!";
         lastResult.style.backgroundColor = "red";
         // Comprobamos si el numero introducido es mayor o menor al aleatorio
         // Es la ayuda al jugador para adivinar el numero
         if (userGuess < randomNumber) {
-            lowOrHi.textContent = "!El numero es muy bajo!";
+            lowOrHi.textContent = "The number you have inserted is too low!";
         } else if (userGuess > randomNumber) {
-            lowOrHi.textContent = "!El numero es muy grande!";
+            lowOrHi.textContent = "The number you have inserted is too high!";
         }
     }
 
@@ -76,7 +76,7 @@ function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
     resetButton = document.createElement("button");
-    resetButton.textContent = "Iniciar nuevo juego";
+    resetButton.textContent = "Start new game";
     resetButton.style.backgroundColor = "black";
     resetButton.style.color = "lightgreen";
     resetButton.style.padding = "10px";
